@@ -3,26 +3,37 @@
    with mobile-first responsive design
    =================================================================== */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* ── full-page wrapper ────────────────────────────────────────────── */
 .home-page {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /* ── outer container (mirrors .no-chat-selected-container) ─────────── */
 .home-container {
     flex: 1;
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: var(--background-chat);
-    padding: 1rem;
-    min-height: 100vh;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
 }
 
 /* ── inner content stack (mirrors .no-chat-selected-content) ──────── */
