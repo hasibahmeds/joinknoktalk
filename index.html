@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Knok Talk - A secure real-time chat app for seamless messaging, video calls, and voice notes. Connect with friends instantly on any device.">
+    <title>Knok Talk</title>
+    <!-- Favicon: At Sign with Gradient -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ec4899;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4' fill='url(%23grad)' stroke='white' stroke-width='1' /%3E%3Cpath d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8' stroke='url(%23grad)' stroke-width='2.5' /%3E%3Cpath d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8' stroke='white' stroke-width='0.5' /%3E%3C/g%3E%3C/svg%3E">
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #ec4899;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            --background-chat: #0f172a;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--background-chat);
+            color: white;
+        }
+
+        /* Adjustments for standalone HTML */
+        .home-page {
+            overflow: hidden;
+        }
+
+        /* Lucide icon sizing to match react-icons */
+        .lucide {
+            width: 40px;
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+
+        /* xs (< 576px) */
+        @media (max-width: 575.98px) {
+            .lucide {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        /* sm (≥ 576px, < 768px) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .lucide {
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        .home-btn-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Ensure the button looks correct with the icon */
+        .home-get-started-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="home-page">
+        <!-- main content (mirrors no-chat-selected-container) -->
+        <div class="home-container">
+            <div class="home-content">
+
+                <!-- 3-D badge + pulse rings -->
+                <div class="home-3d-wrapper">
+                    <div class="home-3d-badge">
+                        <div class="home-badge-layer front">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div class="home-badge-layer middle"></div>
+                        <div class="home-badge-layer back"></div>
+                    </div>
+                    <div class="home-pulse-rings">
+                        <div class="home-pulse-ring ring-1"></div>
+                        <div class="home-pulse-ring ring-2"></div>
+                    </div>
+                </div>
+
+                <!-- text + CTA -->
+                <div class="home-text-content">
+                    <h1>Knok Talk</h1>
+                    <button id="home-get-started-btn" class="home-get-started-btn">
+                        <i data-lucide="send" class="home-btn-icon"></i>
+                        Join The Chat!
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- background blobs -->
+            <div class="home-background-decoration">
+                <div class="home-blob blob-1"></div>
+                <div class="home-blob blob-2"></div>
+                <div class="home-blob blob-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Handle Get Started button click
+        document.getElementById('home-get-started-btn').addEventListener('click', () => {
+            // Replicate navigate('/dashboard')
+            window.location.href = 'dashboard.html'; 
+        });
+    </script>
+</body>
+</html>
